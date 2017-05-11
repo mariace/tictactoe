@@ -8,25 +8,25 @@ namespace tictactoe.game
 {
     class TicTacToe
     {
-        private String column;
-        private String row;
-        int[,] movement = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        private int column;
+        private int row;
+        String[] movement = new String[9];
         int flag = 0;
 
 
-        public void setColumn(String column) {
+        public void setColumn(int column) {
             this.column = column;
         }
 
-        public String getColumn() {
+        public int getColumn() {
             return this.column;
-        }
-        public void setRow(String row)
+}
+        public void setRow(int row)
         {
             this.row = row;
         }
 
-        public String getRow()
+        public int getRow()
         {
             return this.row;
         }
@@ -34,32 +34,37 @@ namespace tictactoe.game
 
         public void print()
         {
-
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 9; i++)
             {
-                for (int j = 0; j < 3; j++)
-                {
-                    Console.Write("    " + movement[i,j]);
-
-                }
-                Console.WriteLine();
-                Console.Read();
+                movement[i] = i.ToString();
+            }
+            for (int i = 0; i < 7; i+=3)
+            {
+                Console.WriteLine(movement[i] + "  |  " + movement[i+1] + "  |  " + movement[i + 2]);
+                Console.ReadLine();
 
             }
+            
         }
         public void game() {
             inputInformation player = new inputInformation();
             Console.WriteLine(player.getPlayerOne() + "start");
-            Console.WriteLine("Type the row where you like to put the symbol:");
-            setRow(Console.ReadLine());
-            Console.WriteLine("Type the column where you like to put the symbol:");
-            setColumn(Console.ReadLine());
-            int answerOne = Convert.ToInt32(getRow());
-            int answerTwo = Convert.ToInt32(getColumn());
-            movement[answerOne,answerTwo];
-
+            Console.WriteLine("Type the number where you like to put the symbol:");
+            int number = Convert.ToInt32(Console.ReadLine());
+            movement[number] = player.getPlayerOne();
 
         }
+
+        public void validation() {
+            for (int i = 0; i < 7; i += 3)
+            {
+                if (true)
+                {
+
+                }
+            }
+        }
+
     }
 }
 

@@ -12,7 +12,10 @@ namespace tictactoe
         {
             game.inputInformation data = new game.inputInformation();
             game.TicTacToe game = new game.TicTacToe();
-            // data.inputData();
+            Console.Title = ("Tic Tac Toe"); 
+            Console.WriteLine("Tic Tac Toe Game");
+            //data.inputData();
+            //Console.Clear();
             game.print();
            
         }
