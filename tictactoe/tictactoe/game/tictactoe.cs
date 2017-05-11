@@ -8,10 +8,32 @@ namespace tictactoe.game
 {
     class TicTacToe
     {
+        private String column;
+        private String row;
+        int[,] movement = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int flag = 0;
+
+
+        public void setColumn(String column) {
+            this.column = column;
+        }
+
+        public String getColumn() {
+            return this.column;
+        }
+        public void setRow(String row)
+        {
+            this.row = row;
+        }
+
+        public String getRow()
+        {
+            return this.row;
+        }
+
+
         public void print()
         {
-            
-            int[,] movement = new int[3, 3] { {1,2,3 }, {4,5,6 }, {7,8,9} };
 
             for (int i = 0; i < 3; i++)
             {
@@ -24,7 +46,17 @@ namespace tictactoe.game
                 Console.Read();
 
             }
-
+        }
+        public void game() {
+            inputInformation player = new inputInformation();
+            Console.WriteLine(player.getPlayerOne() + "start");
+            Console.WriteLine("Type the row where you like to put the symbol:");
+            setRow(Console.ReadLine());
+            Console.WriteLine("Type the column where you like to put the symbol:");
+            setColumn(Console.ReadLine());
+            int answerOne = Convert.ToInt32(getRow());
+            int answerTwo = Convert.ToInt32(getColumn());
+            movement[answerOne,answerTwo];
 
 
         }
