@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="game\inputInformation.cs" />
+    <Compile Include="game\data\InputInformation.cs" />
+    <Compile Include="game\TicTacToe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

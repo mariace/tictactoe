@@ -14,7 +14,6 @@ namespace tictactoe.game
         private String playerTwo;
         private int x;
         private  int o;
-        private int answer;
  
         public void setPlayerOne(String playerOne)
         {

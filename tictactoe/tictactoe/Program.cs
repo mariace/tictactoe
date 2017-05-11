@@ -11,7 +11,10 @@ namespace tictactoe
         static void Main(string[] args)
         {
             game.inputInformation data = new game.inputInformation();
-            data.inputData();
+            game.TicTacToe game = new game.TicTacToe();
+            // data.inputData();
+            game.print();
+           
         }
     }
 }
