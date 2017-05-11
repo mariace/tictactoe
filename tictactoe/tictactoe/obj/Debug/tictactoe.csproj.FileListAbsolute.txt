@@ -1,1 +1,7 @@
 c:\users\maryc\onedrive\documents\visual studio 2015\Projects\tictactoe\tictactoe\bin\Debug\tictactoe.exe.config
+C:\Users\maryc\OneDrive\Documents\tictactoe\tictactoe\tictactoe\bin\Debug\tictactoe.exe.config
+C:\Users\maryc\OneDrive\Documents\tictactoe\tictactoe\tictactoe\obj\Debug\tictactoe.csprojResolveAssemblyReference.cache
+C:\Users\maryc\OneDrive\Documents\tictactoe\tictactoe\tictactoe\bin\Debug\tictactoe.exe
+C:\Users\maryc\OneDrive\Documents\tictactoe\tictactoe\tictactoe\bin\Debug\tictactoe.pdb
+C:\Users\maryc\OneDrive\Documents\tictactoe\tictactoe\tictactoe\obj\Debug\tictactoe.exe
+C:\Users\maryc\OneDrive\Documents\tictactoe\tictactoe\tictactoe\obj\Debug\tictactoe.pdb

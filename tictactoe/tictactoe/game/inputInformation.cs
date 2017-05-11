@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//in this class are the input information that put the gamers
+// Name and the rol they want to choose X or O
+namespace tictactoe.game
+{
+    class inputInformation
+    {
+        private String playerOne;
+        private String playerTwo;
+        private int x;
+        private  int o;
+        private int answer;
+ 
+        public void setPlayerOne(String playerOne)
+        {
+            this.playerOne = playerOne;
+        }
+        public String getPlayerOne()
+        {
+            return this.playerOne;
+
+        }
+        public void setPlayerTwo(String playerTwo)
+        {
+            this.playerTwo = playerTwo;
+        }
+
+        public String getPlayerTwo()
+        {
+            return this.playerTwo;
+        }
+
+        public void setX(int x) {
+            this.x = x;
+        }
+
+        public int getX() {
+            return this.x;
+        }
+
+        public void setO(int o) {
+            this.o = o;
+        }
+
+        public int getO() {
+            return this.o;
+        }
+
+        //this method is just for input the necesary data
+        public void inputData() {
+            Console.WriteLine("Type the name of the Player One: ");
+            setPlayerOne(Console.ReadLine());
+            Console.WriteLine("Type the name of the Player Two: ");
+            setPlayerTwo(Console.ReadLine());
+            Console.WriteLine(getPlayerOne() + " If want to be the 'X' type 1 or if " + getPlayerOne() + " want to be the 'O' type 2");
+            String answer = Console.ReadLine();
+            if (answer.Equals("1"))
+            {
+                
+                Console.WriteLine(getPlayerOne() + " You be the 'X'");
+                Console.WriteLine(getPlayerTwo() + " You have to be the 'O'");
+                Console.ReadLine();
+            }
+            else {
+                Console.WriteLine(getPlayerOne() + " You be the 'O'");
+                Console.WriteLine(getPlayerTwo() + " You have to be the 'X'");
+                Console.ReadLine();
+
+            }
+
+            Console.WriteLine("Good Luck!! " + getPlayerTwo() + " and " + getPlayerOne());
+            Console.ReadLine();
+
+        }
+    }
+}
