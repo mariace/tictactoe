@@ -3,7 +3,7 @@
 
 namespace tictactoe
 {
-    class Program : TicTacToe
+    class Program
     {
         static void Main(string[] args)
         {
@@ -12,19 +12,29 @@ namespace tictactoe
             Console.Title = ("Tic Tac Toe"); 
             Console.WriteLine("Tic Tac Toe Game");
             data.inputData();
-            game.print();
-            while (game.validation() == false)
+            game.fill();
+            game.symbol(data.getX());
+            String playOne = game.getPlayerOne();
+            String playTwo = game.getPlayerTwo();
+            while (game.win()==1)
             {
-                game.game(game.getPlayerOne());// is the symbol
-                if (game.validation()==true)
+                while (game.validation() == false)
                 {
-                    break;
-                    game.game(game.getPlayerTwo());
+                    game.game(playOne);// is the symbol
+                    if (game.validation() == false)
+                    {
+                        game.game(playTwo);
+                    }
+                    else
+                    {
+                        break;
+                        game.win();
+                    }
                 }
 
+
             }
-            Console.Clear();
-            game.print();
+            
            
         }
     }
