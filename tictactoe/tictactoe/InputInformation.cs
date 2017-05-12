@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 //in this class are the input information that put the gamers
 // Name and the rol they want to choose X or O
-namespace tictactoe.game
+namespace tictactoe
 {
     class inputInformation
     {
