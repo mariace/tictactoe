@@ -16,9 +16,7 @@ namespace tictactoe
             game.symbol(data.getX());
             String playOne = game.getPlayerOne();
             String playTwo = game.getPlayerTwo();
-            while (game.win()==1)
-            {
-                while (game.validation() == false)
+             while (game.validation() == false)
                 {
                     game.game(playOne);// is the symbol
                     if (game.validation() == false)
@@ -38,4 +36,4 @@ namespace tictactoe
            
         }
     }
-}
+

@@ -61,7 +61,17 @@ namespace tictactoe
                 Console.WriteLine("Type the number where you like to put the symbol:");
                 print();
                 int number = Convert.ToInt32(Console.ReadLine());
-                movement[number] = play;    
+
+            if (movement[number].Equals("X") || movement[number].Equals("O"))
+            {
+                Console.WriteLine("This case is taken, choose another");
+                int newNumber = Convert.ToInt32(Console.ReadLine());
+                movement[newNumber] = play;
+            }
+            else
+            {
+                movement[number] = play;
+            }   
         }
 
         //this method say if the person who play first use th 'X' or 'O'
@@ -108,24 +118,18 @@ namespace tictactoe
             {
                 return true;
             }
+           
             return false;
         }
+        public void caseTaken() {
 
-        //Ask if the people want to play again
-        public int win() {
-            int yes;
-            int no;
+        }
+        //win message
+        public void win() {
+           
             Console.WriteLine("Congrats, you win Tic Tac Toe");
-            Console.WriteLine("Do you want to play again?");
-            Console.WriteLine("Yes or No");
-            if (Console.ReadLine().Equals("yes"))
-            {
-               return yes = 1;
-            }
-            else
-            {
-               return no = 0;
-            }
+            Console.ReadLine();
+           
         }
 
     }
