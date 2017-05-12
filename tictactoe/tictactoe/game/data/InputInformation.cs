@@ -13,20 +13,24 @@ namespace tictactoe.game
         private String playerOne;
         private String playerTwo;
         private int x;
-        private  int o;
- 
-        public void setPlayerOne(String playerOne)
+        private int o;
+
+        //default constructor 
+        public inputInformation()
         {
-            this.playerOne = playerOne;
+        }
+        public void setPlayerOne(String _playerOne)
+        {
+            this.playerOne = _playerOne;
         }
         public String getPlayerOne()
         {
             return this.playerOne;
 
         }
-        public void setPlayerTwo(String playerTwo)
+        public void setPlayerTwo(String _playerTwo)
         {
-            this.playerTwo = playerTwo;
+            this.playerTwo = _playerTwo;
         }
 
         public String getPlayerTwo()
@@ -34,21 +38,22 @@ namespace tictactoe.game
             return this.playerTwo;
         }
 
-        public void setX(int x) {
-            this.x = x;
+        public void setX(int _x) {
+            this.x = _x;
         }
 
         public int getX() {
             return this.x;
         }
 
-        public void setO(int o) {
-            this.o = o;
+        public void setO(int _o) {
+            this.o = _o;
         }
 
         public int getO() {
             return this.o;
         }
+
 
         //this method is just for input the necesary data
         public void inputData() {
@@ -60,12 +65,15 @@ namespace tictactoe.game
             String answer = Console.ReadLine();
             if (answer.Equals("1"))
             {
-                
+                setX(1);
+                setO(0);
                 Console.WriteLine(getPlayerOne() + " You be the 'X'");
                 Console.WriteLine(getPlayerTwo() + " You have to be the 'O'");
                 Console.ReadLine();
             }
             else {
+                setX(0);
+                setO(1);
                 Console.WriteLine(getPlayerOne() + " You be the 'O'");
                 Console.WriteLine(getPlayerTwo() + " You have to be the 'X'");
                 Console.ReadLine();
@@ -76,5 +84,6 @@ namespace tictactoe.game
             Console.ReadLine();
 
         }
+
     }
 }

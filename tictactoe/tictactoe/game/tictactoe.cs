@@ -4,33 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace tictactoe.game
 {
     class TicTacToe
-    {
-        private int column;
-        private int row;
+    { 
+
+        private String playerOne;
+        private String playerTwo; 
         String[] movement = new String[9];
-        int flag = 0;
+        inputInformation player = new inputInformation();
 
-
-        public void setColumn(int column) {
-            this.column = column;
-        }
-
-        public int getColumn() {
-            return this.column;
-}
-        public void setRow(int row)
+    
+        public TicTacToe()
         {
-            this.row = row;
         }
 
-        public int getRow()
+        public void setPlayerOne(String _playerOne) {
+            this.playerOne = _playerOne;
+        }
+        public String getPlayerOne() {
+            return this.playerOne;
+        }
+        public void setPlayerTwo(String _playerTwo)
         {
-            return this.row;
+            this.playerTwo = _playerTwo;
         }
-
+        public String getPlayerTwo()
+        {
+            return this.playerTwo;
+        }
 
         public void print()
         {
@@ -46,23 +49,56 @@ namespace tictactoe.game
             }
             
         }
-        public void game() {
-            inputInformation player = new inputInformation();
-            Console.WriteLine(player.getPlayerOne() + "start");
-            Console.WriteLine("Type the number where you like to put the symbol:");
+        public void game(String play) {
+
+            Console.WriteLine(player.getPlayerOne() + " start");
+            Console.WriteLine("Type the number where you like to put the symbol:" );
+            print();
             int number = Convert.ToInt32(Console.ReadLine());
-            movement[number] = player.getPlayerOne();
-
+            movement[number] = play;
+            print();
         }
-
-        public void validation() {
+        public void symbol() {
+            if (player.getX() == 1 && player.getO()==0)
+            {
+                setPlayerOne("X");
+                setPlayerTwo("O");
+            }
+            else
+            {
+                setPlayerOne("O");
+                setPlayerTwo("X");
+            }
+        }
+        public Boolean validation() {
             for (int i = 0; i < 7; i += 3)
             {
-                if (true)
+                if (movement[i].Equals(movement[i+1]) && movement[i+1].Equals(movement[i+2]))
                 {
-
+                     return true;
                 }
             }
+            if (movement[0].Equals(movement[4]) && movement[4].Equals(movement[8]))
+            {
+                return true;
+            }
+            if (movement[0].Equals(movement[3]) && movement[3].Equals(movement[6]))
+            {
+                return true;
+            }
+            if (movement[1].Equals(movement[4]) && movement[4].Equals(movement[7]))
+            {
+                return true;
+            }
+            if (movement[2].Equals(movement[5]) && movement[5].Equals(movement[8]))
+            {
+                return true;
+            }
+            if (movement[2].Equals(movement[4]) && movement[4].Equals(movement[6]))
+            {
+                return true;
+            }
+            return false;
         }
 
     }
