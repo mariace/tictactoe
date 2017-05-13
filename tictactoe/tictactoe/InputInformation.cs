@@ -60,22 +60,38 @@ namespace tictactoe
             setPlayerTwo(Console.ReadLine());
             Console.WriteLine(getPlayerOne() + " If want to be the 'X' type 1 or if " + getPlayerOne() + " want to be the 'O' type 2");
             String answer = Console.ReadLine();
-            if (answer.Equals("1"))
+            while (answer!="1" || answer!="2")
             {
-                setX(1);
-                setO(0);
-                Console.WriteLine(getPlayerOne() + " You be the 'X'");
-                Console.WriteLine(getPlayerTwo() + " You have to be the 'O'");
-                Console.ReadLine();
-            }
-            else {
-                setX(0);
-                setO(1);
-                Console.WriteLine(getPlayerOne() + " You be the 'O'");
-                Console.WriteLine(getPlayerTwo() + " You have to be the 'X'");
-                Console.ReadLine();
+                if (answer.Equals("1") || answer.Equals("2"))
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid option, try again");
+                answer = Console.ReadLine();
 
             }
+
+
+
+            if (answer.Equals("1"))
+                {
+                    setX(1);
+                    setO(0);
+                    Console.WriteLine(getPlayerOne() + " You be the 'X'");
+                    Console.WriteLine(getPlayerTwo() + " You have to be the 'O'");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    setX(0);
+                    setO(1);
+                    Console.WriteLine(getPlayerOne() + " You be the 'O'");
+                    Console.WriteLine(getPlayerTwo() + " You have to be the 'X'");
+                    Console.ReadLine();
+
+                }
+
+            
 
             Console.WriteLine("Good Luck!! " + getPlayerTwo() + " and " + getPlayerOne());
             Console.ReadLine();

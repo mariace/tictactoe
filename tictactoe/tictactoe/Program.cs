@@ -25,8 +25,9 @@ namespace tictactoe
                     }
                     else
                     {
+                    Console.WriteLine("You Win, Congrats!!");
                         break;
-                        game.win();
+                        
                     }
                 }
 

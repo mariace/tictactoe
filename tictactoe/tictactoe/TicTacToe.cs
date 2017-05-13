@@ -5,14 +5,14 @@
 namespace tictactoe
 {
     class TicTacToe
-    { 
+    {
 
         private String playerOne;
-        private String playerTwo; 
+        private String playerTwo;
         String[] movement = new String[9];
         inputInformation player = new inputInformation();
 
-    
+
         public TicTacToe()
         {
         }
@@ -44,34 +44,63 @@ namespace tictactoe
         // 6|7|8
         public void print()
         {
-          
-            for (int i = 0; i < 7; i+=3)
+
+            for (int i = 0; i < 7; i += 3)
             {
-                Console.WriteLine(movement[i] + "  |  " + movement[i+1] + "  |  " + movement[i + 2]);
-                Console.ReadLine();
+                Console.WriteLine(movement[i] + "  |  " + movement[i + 1] + "  |  " + movement[i + 2]);
+
 
             }
-            
+
         }
 
         //this method draw the 'X' or 'O' in the board
+        //and valid if the type number is valid or no and if the case is already taken
         public void game(String play) {
-                Console.Clear();
-                Console.WriteLine(play + " start");
-                Console.WriteLine("Type the number where you like to put the symbol:");
+            Console.Clear();
+            Console.WriteLine(play + " start");
+            Console.WriteLine("Type the number where you like to put the symbol:");
+            print();
+            int number = Convert.ToInt32(Console.ReadLine());
+            int flag=0;
+            while (number < 0 || number > 8)
+            {
+                flag = 1;
+                Console.WriteLine("Invalid number, try again");
                 print();
-                int number = Convert.ToInt32(Console.ReadLine());
-
-            if (movement[number].Equals("X") || movement[number].Equals("O"))
-            {
-                Console.WriteLine("This case is taken, choose another");
-                int newNumber = Convert.ToInt32(Console.ReadLine());
-                movement[newNumber] = play;
+                number = Convert.ToInt32(Console.ReadLine());
+                if (number >= 0 && number <= 8)
+                {
+                    while (movement[number].Equals("X") || movement[number].Equals("O"))
+                    {
+                        Console.WriteLine("This case is taken, choose another");
+                        number = Convert.ToInt32(Console.ReadLine());
+                       
+                    }
+                    movement[number] = play;
+                }
+               
             }
-            else
+            if (flag != 1)
             {
+                while (movement[number].Equals("X") || movement[number].Equals("O"))
+                {
+                    flag = 1;
+                    if (flag==1)
+                    {
+                        
+                        Console.WriteLine("This case is taken, choose another");
+                        number = Convert.ToInt32(Console.ReadLine());
+                        
+                    }
+                   
+                }
                 movement[number] = play;
-            }   
+            }
+            
+
+
+
         }
 
         //this method say if the person who play first use th 'X' or 'O'
@@ -121,17 +150,6 @@ namespace tictactoe
            
             return false;
         }
-        public void caseTaken() {
-
-        }
-        //win message
-        public void win() {
-           
-            Console.WriteLine("Congrats, you win Tic Tac Toe");
-            Console.ReadLine();
-           
-        }
-
     }
 }
 
