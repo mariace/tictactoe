@@ -77,7 +77,7 @@ namespace tictactoe
                         number = Convert.ToInt32(Console.ReadLine());
                        
                     }
-                    movement[number] = play;
+                         movement[number] = play;
                 }
                
             }
@@ -97,10 +97,6 @@ namespace tictactoe
                 }
                 movement[number] = play;
             }
-            
-
-
-
         }
 
         //this method say if the person who play first use th 'X' or 'O'

@@ -26,15 +26,12 @@ namespace tictactoe
                     else
                     {
                     Console.WriteLine("You Win, Congrats!!");
+                    Console.ReadLine()
                         break;
                         
                     }
                 }
-
-
-            }
-            
-           
+            }  
         }
     }
 
