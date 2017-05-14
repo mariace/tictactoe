@@ -11,6 +11,7 @@ namespace tictactoe
         private String playerTwo;
         String[] movement = new String[9];
         inputInformation player = new inputInformation();
+    
 
 
         public TicTacToe()
@@ -31,6 +32,7 @@ namespace tictactoe
         {
             return this.playerTwo;
         }
+
         //fill the array 0-8
         public void fill() {
             for (int i = 0; i < 9; i++)
@@ -57,17 +59,24 @@ namespace tictactoe
         //this method draw the 'X' or 'O' in the board
         //and valid if the type number is valid or no and if the case is already taken
         public void game(String play) {
+
+           
             Console.Clear();
             Console.WriteLine(play + " start");
             Console.WriteLine("Type the number where you like to put the symbol:");
             print();
-            int number = Convert.ToInt32(Console.ReadLine());
             int flag=0;
-            while (number < 0 || number > 8)
+            int number = Convert.ToInt32(Console.ReadLine());
+            
+           
+            while ((number < 0 || number > 8) || (movement[0].Equals("O") || movement[0].Equals("X")) && (movement[1].Equals("O") || movement[1].Equals("X")) && (movement[2].Equals("O") || movement[2].Equals("X")) &&
+                   (movement[3].Equals("O") || movement[3].Equals("X")) && (movement[4].Equals("O") || movement[4].Equals("X")) && (movement[5].Equals("O") || movement[5].Equals("X")) &&
+                   (movement[6].Equals("O") || movement[6].Equals("X")) && (movement[7].Equals("O") || movement[7].Equals("X")) && (movement[8].Equals("O") || movement[8].Equals("X")) )
             {
                 flag = 1;
                 Console.WriteLine("Invalid number, try again");
                 print();
+               
                 number = Convert.ToInt32(Console.ReadLine());
                 if (number >= 0 && number <= 8)
                 {
@@ -97,6 +106,18 @@ namespace tictactoe
                 }
                 movement[number] = play;
             }
+
+            if ((movement[0].Equals("O") || movement[0].Equals("X")) && (movement[1].Equals("O") || movement[1].Equals("X")) && (movement[2].Equals("O") || movement[2].Equals("X")) &&
+                   (movement[3].Equals("O") || movement[3].Equals("X")) && (movement[4].Equals("O") || movement[4].Equals("X")) && (movement[5].Equals("O") || movement[5].Equals("X")) &&
+                   (movement[6].Equals("O") || movement[6].Equals("X")) && (movement[7].Equals("O") || movement[7].Equals("X")) && (movement[8].Equals("O") || movement[8].Equals("X")))
+            {
+                Console.WriteLine("Was tie game!!");
+                Console.WriteLine("End game");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+           
+            
         }
 
         //this method say if the person who play first use th 'X' or 'O'

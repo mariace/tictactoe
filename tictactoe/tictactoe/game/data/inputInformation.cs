@@ -51,6 +51,10 @@ namespace tictactoe
             return this.o;
         }
 
+        public void instructions() {
+            Console.WriteLine("Hi players!!, Tic Tac Toe has rules.  1.Pain a lot of attention to the instructions when say type a letter just type a letter, when say type a number just type a number.  2.You win when you have a line of your symbol.  3.It's a tie game when anybody win the game  4.When type a number higher than the drawtable you have another oportunity to type a correct number.  Enjoy the game!!");
+            Console.ReadLine();
+        }
 
         //this method is just for input the necesary data
         public void inputData() {
